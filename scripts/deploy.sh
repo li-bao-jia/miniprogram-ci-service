@@ -5,7 +5,7 @@ set -x
 #!/bin/bash
 
 # Build the Docker image
-docker build -t miniprogram-ci-service .
+docker build -t libaojia/miniprogram-ci-service .
 
 # Run the Docker container
-docker run -d -p 3000:3000 --name miniprogram-ci-service miniprogram-ci-service
+# docker run -d -p 3000:3000 --name miniprogram-ci-service miniprogram-ci-service
