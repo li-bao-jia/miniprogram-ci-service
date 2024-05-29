@@ -2,7 +2,7 @@
 FROM node:14
 
 # 设置工作目录
-WORKDIR /node/micro/we-chat-devtools
+WORKDIR /node/micro/miniprogram-ci-service
 
 # 复制package.json和package-lock.json
 COPY package*.json ./
