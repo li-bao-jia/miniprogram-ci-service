@@ -4,8 +4,8 @@
 <p align="center">
 <a href="https://github.com/li-bao-jia"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/li-bao-jia"><img src="https://img.shields.io/packagist/dt/li-bao-jia/we-chat-devtools" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/li-bao-jia/we-chat-devtools" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/li-bao-jia/we-chat-devtools" alt="License"></a>
+<a href="https://packagist.org/packages/li-bao-jia"><img src="https://img.shields.io/packagist/v/li-bao-jia/we-chat-devtools" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/li-bao-jia"><img src="https://img.shields.io/packagist/l/li-bao-jia/we-chat-devtools" alt="License"></a>
 </p>
 
 ### 项目概述
