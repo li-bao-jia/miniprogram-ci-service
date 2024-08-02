@@ -1,15 +1,27 @@
 {
   "name": "miniprogram-ci-service",
   "version": "1.0.0",
-  "description": "",
+  "description": "指示 miniprogram-ci 实现微信小程序上传、预览微服务",
+  "authors": [
+    {
+      "name": "L-B-Jia",
+      "qq": "751818588",
+      "email": "livsyitian@163.com"
+    }
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/li-bao-jia/miniprogram-ci-service",
+  "keywords": [
+    "L-B-Jia",
+    "libaojia",
+    "miniprogram-ci",
+    "miniprogram-ci-service"
+  ],
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "L-B-Jia",
-  "license": "",
   "dependencies": {
     "body-parser": "^1.20.2",
     "express": "^4.19.2",
