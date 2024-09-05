@@ -2,4 +2,3 @@
 .DS_Store
 .idea/
 docker-compose.yaml
-package-lock.json
