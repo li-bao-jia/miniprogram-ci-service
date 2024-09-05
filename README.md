@@ -134,4 +134,6 @@
 
 - QQ: 751818588
 
+- QQ群: 232185834
+
 - EMAIL: livsyitian@163.com
