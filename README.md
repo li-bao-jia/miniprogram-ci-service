@@ -1,12 +1,15 @@
-<p align="center">miniprogram-ci-service</p>
-<p align="center">使用 miniprogram-ci 实现一个微信小程序上传、预览微服务</p>
-
-<p align="center">
-<a href="https://github.com/li-bao-jia"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/li-bao-jia"><img src="https://img.shields.io/packagist/dt/li-bao-jia/we-chat-devtools" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/li-bao-jia"><img src="https://img.shields.io/packagist/v/li-bao-jia/we-chat-devtools" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/li-bao-jia"><img src="https://img.shields.io/packagist/l/li-bao-jia/we-chat-devtools" alt="License"></a>
-</p>
+<div align=center>
+  <p align="center">miniprogram-ci-service</p>
+  <p align="center">指示 miniprogram-ci 操作微信小程序上传、预览等操作</p>
+</div>
+<div align=center>
+  <p align="center">
+    <a href="https://packagist.org/packages/li-bao-jia"><img src="https://img.shields.io/docker/v/libaojia/miniprogram-ci-service?sort=semver" alt="Latest Stable Version"></a>
+    <a href="https://github.com/li-bao-jia"><img src="https://img.shields.io/docker/pulls/libaojia/miniprogram-ci-service" alt="Build Status"></a>
+    <a href="https://packagist.org/packages/li-bao-jia"><img src="https://img.shields.io/docker/stars/libaojia/miniprogram-ci-service" alt="Total Downloads"></a>
+    <a href="https://packagist.org/packages/li-bao-jia"><img src="https://img.shields.io/github/license/li-bao-jia/miniprogram-ci-service" alt="License"></a>
+  </p>
+</div>
 
 ### 项目概述
 - 功能：通过 HTTP API 方式，指示 miniprogram-ci 操作微信小程序上传、预览
