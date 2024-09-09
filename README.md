@@ -4,10 +4,21 @@
 </div>
 <div align=center>
   <p align="center">
-    <a href="https://packagist.org/packages/li-bao-jia"><img src="https://img.shields.io/docker/v/libaojia/miniprogram-ci-service?sort=semver" alt="Latest Stable Version"></a>
-    <a href="https://github.com/li-bao-jia"><img src="https://img.shields.io/docker/pulls/libaojia/miniprogram-ci-service" alt="Build Status"></a>
-    <a href="https://packagist.org/packages/li-bao-jia"><img src="https://img.shields.io/docker/stars/libaojia/miniprogram-ci-service" alt="Total Downloads"></a>
-    <a href="https://packagist.org/packages/li-bao-jia"><img src="https://img.shields.io/github/license/li-bao-jia/miniprogram-ci-service" alt="License"></a>
+    <a href="https://github.com/li-bao-jia">
+      <img src="https://img.shields.io/github/license/li-bao-jia/miniprogram-ci-service" alt="License">
+    </a>
+    <a href="https://hub.docker.com/r/libaojia/miniprogram-ci-service">
+      <img src="https://img.shields.io/badge/node-v18.20.0-blue" alt="Build Status">
+    </a>
+    <a href="https://hub.docker.com/r/libaojia/miniprogram-ci-service">
+      <img src="https://img.shields.io/docker/pulls/libaojia/miniprogram-ci-service" alt="Build Status">
+    </a>
+    <a href="https://hub.docker.com/r/libaojia/miniprogram-ci-service">
+      <img src="https://img.shields.io/docker/stars/libaojia/miniprogram-ci-service" alt="Total Downloads">
+    </a>
+    <a href="https://hub.docker.com/r/libaojia/miniprogram-ci-service">
+      <img src="https://img.shields.io/docker/v/libaojia/miniprogram-ci-service?sort=semver" alt="Latest Stable Version" style="margin-left: 3px">
+    </a>
   </p>
 </div>
 
