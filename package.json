@@ -1,7 +1,7 @@
 {
   "name": "miniprogram-ci-service",
   "version": "1.0.0",
-  "description": "指示 miniprogram-ci 实现微信小程序上传、预览微服务",
+  "description": "指示 miniprogram-ci 实现微信小程序上传、预览、……、成员管理等服务",
   "authors": [
     {
       "name": "L-B-Jia",
@@ -25,6 +25,7 @@
   "dependencies": {
     "body-parser": "^1.20.2",
     "express": "^4.19.2",
-    "miniprogram-ci": "^1.9.17"
+    "miniprogram-ci": "^1.9.17",
+    "miniprogram-mp-ci": "^1.0.7"
   }
 }
