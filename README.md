@@ -5,7 +5,7 @@
 <div align=center>
   <p align="center">
     <a href="https://hub.docker.com/r/libaojia/miniprogram-ci-service">
-      <img src="https://img.shields.io/badge/node-v18.20.0-blue" alt="Build Status">
+      <img src="https://img.shields.io/badge/node-v20-blue" alt="Build Status">
     </a>
     <a href="https://hub.docker.com/r/libaojia/miniprogram-ci-service">
       <img src="https://img.shields.io/docker/pulls/libaojia/miniprogram-ci-service" alt="Build Status">
@@ -43,7 +43,7 @@
 
 - 启动服务
     ```sh
-    node index.js 
+    node ./bin/start
     ```
 
 #### Docker 启动服务
