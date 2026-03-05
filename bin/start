@@ -49,6 +49,10 @@ function onError(error) {
             console.error(bind + ' requires elevated privileges');
             process.exit(1);
             break;
+        case 'EPERM':
+            console.error(bind + ' listen is not permitted in current environment');
+            process.exit(1);
+            break;
         case 'EADDRINUSE':
             console.error(bind + ' is already in use');
             process.exit(1);
@@ -68,5 +72,10 @@ function onListening() {
         ? 'pipe ' + addr
         : 'port ' + addr.port;
     debug('Listening on ' + bind);
-}
+    const baseUrl = typeof addr === 'string'
+        ? addr
+        : `http://127.0.0.1:${addr.port}`;
 
+    console.log(`[miniprogram-ci-service] listening on ${baseUrl}`);
+    console.log(`[miniprogram-ci-service] endpoints: POST /upload, POST /preview`);
+}

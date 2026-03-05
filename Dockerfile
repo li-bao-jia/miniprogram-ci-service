@@ -1,5 +1,5 @@
 # 使用官方的Node.js镜像作为基础镜像
-FROM node:18
+FROM node:20-alpine
 
 # 设置工作目录
 WORKDIR /node/micro/miniprogram-ci-service
@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 3000
 
 # 启动应用
-CMD ["node", "index.js"]
+CMD ["node", "./bin/start"]
