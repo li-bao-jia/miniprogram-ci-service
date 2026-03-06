@@ -55,25 +55,96 @@ exports.upload = async (params) => {
         //ignores: ['node_modules/**/*'], // 需要忽略的目录
     })
 
-    const uploadResult = await ci.upload({
-        project,
-        desc: desc,
-        version: version,
-        setting: {                                  // 上传代码时候的设置
-            es6: true,                              // 对应于微信开发者工具的 "es6 转 es5"
-            es7: true,                              // 增强编译
-            minify: true,                           // 上传时压缩所有代码，对应于微信开发者工具的 "上传时压缩代码"
-            // disableUseStrict: true,                 // "增强编译" 开启时，是否禁用JS文件严格模式，默认为false
-            // autoPrefixWXSS: true,                   // 上传时样式自动补全
-            // codeProtect: true,                      // 对应于微信开发者工具的 "上传时进行代码保护"
-            // minifyJS: true,
-            // minifyWXML: true,
-            // minifyWXSS: true
-        },
-        robot: robot,
-        threads: threads,
-        onProgressUpdate: console.log
-    })
+    try {
+        const uploadResult = await ci.upload({
+            project,
+            desc: desc,
+            version: version,
+            setting: {                                  // 上传代码时候的设置
+                es6: true,                              // 对应于微信开发者工具的 "es6 转 es5"
+                es7: true,                              // 增强编译
+                minify: true,                           // 上传时压缩所有代码，对应于微信开发者工具的 "上传时压缩代码"
+                // disableUseStrict: true,                 // "增强编译" 开启时，是否禁用JS文件严格模式，默认为false
+                // autoPrefixWXSS: true,                   // 上传时样式自动补全
+                // codeProtect: true,                      // 对应于微信开发者工具的 "上传时进行代码保护"
+                // minifyJS: true,
+                // minifyWXML: true,
+                // minifyWXSS: true
+            },
+            robot: robot,
+            threads: threads,
+            onProgressUpdate: console.log
+        })
 
-    return {state: true, message: '上传成功', data: uploadResult};
+        if (uploadResult && typeof uploadResult === 'object' && Number(uploadResult.errCode) !== 0 && uploadResult.errCode !== undefined) {
+            return {
+                state: false,
+                message: uploadResult.errMsg || '上传失败',
+                data: uploadResult
+            };
+        }
+
+        return {state: true, message: '上传成功', data: uploadResult};
+    } catch (error) {
+        const errData = normalizeUploadError(error);
+        return {
+            state: false,
+            message: errData.errMsg || '上传失败',
+            data: errData
+        };
+    }
 };
+
+function normalizeUploadError(error) {
+    if (!error) {
+        return {errCode: -1, errMsg: '上传失败'};
+    }
+
+    if (typeof error === 'string') {
+        return {errCode: -1, errMsg: error};
+    }
+
+    if (error instanceof Error) {
+        const message = error.message || '上传失败';
+        // miniprogram-ci 抛错里常包含 JSON 字符串
+        const parsed = tryExtractJsonFromMessage(message);
+        if (parsed) {
+            return parsed;
+        }
+        return {errCode: -1, errMsg: message};
+    }
+
+    if (typeof error === 'object') {
+        const errCode = Number(error.errCode);
+        const errMsg = error.errMsg || error.message || '上传失败';
+        return {
+            errCode: Number.isNaN(errCode) ? -1 : errCode,
+            errMsg: String(errMsg),
+            raw: error
+        };
+    }
+
+    return {errCode: -1, errMsg: '上传失败'};
+}
+
+function tryExtractJsonFromMessage(message) {
+    const idx = message.indexOf('{');
+    if (idx < 0) {
+        return null;
+    }
+    const raw = message.slice(idx);
+    try {
+        const parsed = JSON.parse(raw);
+        if (parsed && typeof parsed === 'object') {
+            const errCode = Number(parsed.errCode);
+            return {
+                errCode: Number.isNaN(errCode) ? -1 : errCode,
+                errMsg: parsed.errMsg || message,
+                raw: parsed
+            };
+        }
+    } catch (e) {
+        return null;
+    }
+    return null;
+}
