@@ -1,5 +1,5 @@
 # 使用官方的Node.js镜像作为基础镜像
-FROM node:20-alpine
+FROM node:24-slim
 
 # 设置工作目录
 WORKDIR /node/micro/miniprogram-ci-service
