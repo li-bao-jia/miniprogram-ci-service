@@ -50,15 +50,26 @@
 
 - 克隆镜像
     ```sh
-    docker pull libaojia/miniprogram-ci
+    docker pull libaojia/miniprogram-ci-service:latest
     ```
 
 - 启动服务
     ```sh
     docker run -d -p 3000:3000 -v <小程序源码路径>:<服务容器映射路径> -v <小程序上传密钥路径>:<服务容器传密钥路径> --name miniprogram-ci miniprogram-ci
     ```
-  根据情况需要映射目录，一般情况需要映射两个目录，一个小程序源码路径，一个小程序上传密钥路径，可根据个人情况映射对应目录，如果未映射目录，在操作小程序源码上传时，会提示小程序源码路径未找到 或 上传密钥文件未找到 
 
+- 启动案例
+    ```cp
+  docker run -d \
+  --name miniprogram-ci-service \
+  --restart unless-stopped \
+  -p 3000:3000 \
+  -v /data/wwwroot/<你的源码路径>:/data/wwwroot/<映射源码路径> \
+  libaojia/miniprogram-ci-service:latest
+    ```
+- 一般情况需要映射两个目录，一个小程序源码路径，一个小程序上传密钥路径，如果未映射目录，在操作小程序源码上传时，会提示小程序源码路径未找到 或 上传密钥文件未找到
+  
+- 备注：如果您的源码文件 和 上传密钥文件在同一目录下，仅需要映射一个目录，请根据实际情况调整映射目录
 ### 使用说明
 
 - 服务启动后，就可以通过 127.0.0.1:3000/upload 调用 miniprogram-ci 上传微信小程序
